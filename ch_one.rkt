@@ -97,3 +97,18 @@
 ; How many arguments does atom? take and what are they?
 ;  atom? takes one argument and it returns true if the argument is a string of characters only,
 ;  else false
+(atom? (car '(Harry had a heap of apples)))
+; true because the car of the list is Harry and Harry is a string of characters
+(atom? (cdr '(Harry had a heap of apples)))
+; false because the cdr the list is a list of 5 atoms
+(atom? (cdr '(Harry)))
+; false because the cdr of the list is an empty list
+(atom? (car (cdr '(swing low sweet cherry oat))))
+; true because car of cdr of list is low
+(atom? (car (cdr'(swing (low sweet) cherry oat))))
+; false because car of cdr of list is (low sweet)
+(eq? 'Harry 'Harry)
+; true because they are both the atom Harry
+(eq? 'margarine 'butter)
+; false because the atom margarine and the atom butter are not the same
+; how many arguments does eq take and what are they? eq? both of them must be non-numeric atoms
