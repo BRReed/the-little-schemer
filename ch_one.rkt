@@ -112,3 +112,14 @@
 (eq? 'margarine 'butter)
 ; false because the atom margarine and the atom butter are not the same
 ; how many arguments does eq take and what are they? eq? both of them must be non-numeric atoms
+; (eq? '() '(strawberry)) no answer because arguments are lists, not atoms.
+; (eq? '6 '7) no answer because arguments are numeric atoms
+;
+; LAW OF EQ?
+; The primitive of eq takes two arguments. Each must be a non-numeric atom
+;
+(eq? (car '(Mary had a little lamb chop)) 'Mary)
+; true because the car of the list is Mary and the atom is Mary
+; (eq? (cdr '(soured milk) 'milk)) no answer because cdr returns a list and eq? only takes atoms`
+(eq? (car '(beans beans we need jelly beans)) (car (cdr '(beans beans we need jelly beans))))
+; true because the car of list is beans and the car of the cdr of list is beans (second atom)
